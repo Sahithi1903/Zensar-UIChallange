@@ -1,0 +1,57 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.75);
+  z-index: 100;
+}
+.dialog-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  padding: 2rem;
+  /* font-size: 2rem; */
+  min-width: 30rem;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: rgb(0, 0, 0, 0.25);
+  z-index: 101;
+}
+
+button {
+  background-color: #008cba; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0.2rem;
+}
+
+label {
+  font-size: 1.4rem;
+  padding-right: 2rem;
+}
+
+.row {
+  margin: 1rem;
+}
+
+input {
+  width: 300px;
+  height: 26px;
+  border-radius: 0.3rem;
+}
+
+.btn-grp {
+  display: flex;
+  justify-content: flex-end;
+}

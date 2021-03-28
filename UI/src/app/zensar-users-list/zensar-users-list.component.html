@@ -1,0 +1,32 @@
+<div>
+  <div class="header">
+    <h1>Users List</h1>
+    <div style="display: flex; justify-content: space-between">
+      <input
+        type="text"
+        placeholder="Search Users"
+        (keyup)="onInputChanged($event.target.value)"
+      />
+      <div style="margin-right: 2rem">
+        <button class="button" (click)="addUser()">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="zensar-card">
+    <app-zensar-user-card
+      *ngFor="let user of users"
+      [image]="user.Image"
+      [name]="user.name"
+      [id]="user.id"
+    >
+    </app-zensar-user-card>
+  </div>
+</div>
+
+<app-zensar-modal-popup
+  *ngIf="addModal"
+  [user]="user"
+  [type]="'add'"
+  [show]="showDialog"
+></app-zensar-modal-popup>

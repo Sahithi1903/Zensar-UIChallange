@@ -1,0 +1,44 @@
+<div class="backdrop" *ngIf="show">
+  <div class="dialog-box">
+    <h1 *ngIf="type == 'add'">Add Profile</h1>
+    <h1 *ngIf="type == 'edit'">Edit Profile</h1>
+    <h1 *ngIf="type == 'delete'">Delete Profile</h1>
+    <div class="row" *ngIf="type == 'add' || type == 'edit'">
+      <label>Image</label
+      ><input
+        type="text"
+        *ngIf="type == 'edit'"
+        (input)="onChange('Image', $event.target.value)"
+        value="{{ user.Image }}"
+      />
+      <input
+        type="text"
+        *ngIf="type == 'add'"
+        (input)="onChange('Image', $event.target.value)"
+      />
+    </div>
+    <div class="row" *ngIf="type == 'add' || type == 'edit'">
+      <label>Name</label
+      ><input
+        type="text"
+        *ngIf="type == 'edit'"
+        (input)="onChange('name', $event.target.value)"
+        value="{{ user.name }}"
+      />
+      <input
+        type="text"
+        *ngIf="type == 'add'"
+        (input)="onChange('name', $event.target.value)"
+      />
+    </div>
+    <div>
+      <p>Are you sure you want to delete the record.</p>
+    </div>
+    <div class="btn-grp">
+      <button (click)="addUser()" *ngIf="type == 'add'">Add</button>
+      <button (click)="editUser()" *ngIf="type == 'edit'">Update</button>
+      <button (click)="deleteUser()" *ngIf="type == 'delete'">Delete</button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

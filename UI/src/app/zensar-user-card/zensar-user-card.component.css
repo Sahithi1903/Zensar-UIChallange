@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  grid-template-columns: 25rem;
+  grid-template-rows: 11rem;
+  background-color: #fcfcfc;
+  margin: 2rem;
+  padding: 1.8rem 1.5rem;
+  border-radius: 0.5rem;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+}
+
+.card > * {
+  margin: 0.8rem;
+}

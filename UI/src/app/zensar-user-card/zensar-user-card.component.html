@@ -1,0 +1,39 @@
+<div class="card">
+  <div>
+    <img
+      style="width: 200px; height: 200px; cursor: pointer"
+      [src]="image"
+      (click)="openUser()"
+    />
+  </div>
+  <div>
+    <div>{{ name }}</div>
+    <div>{{ id }}</div>
+    <div style="display: flex; margin: 0.5rem; cursor: pointer">
+      <span title="Edit User" (click)="showEditPopup()"
+        ><i
+          class="fa fa-pencil"
+          style="padding-right: 1rem"
+          aria-hidden="true"
+        ></i
+      ></span>
+      <span title="Delete User" (click)="deleteUser()"
+        ><i class="fa fa-trash" aria-hidden="true"></i
+      ></span>
+    </div>
+  </div>
+</div>
+
+<app-zensar-modal-popup
+  *ngIf="updateModal"
+  [user]="user"
+  [type]="'edit'"
+  [show]="showDialog"
+></app-zensar-modal-popup>
+
+<app-zensar-modal-popup
+  *ngIf="deleteModal"
+  [user]="user"
+  [type]="'delete'"
+  [show]="showDialog"
+></app-zensar-modal-popup>
